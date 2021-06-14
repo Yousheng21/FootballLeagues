@@ -169,11 +169,6 @@ export const formattedDate = (str) => {
     }
 }
 
-
-// export const addYear = (year='2021') =>{
-//     document.cookie = `year=${year}; max-age=7200;`;
-// }
-
 export const saveLocal = (name, data) => {
     saveToLocalStorage(name, data)
 }
