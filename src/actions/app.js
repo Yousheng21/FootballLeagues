@@ -12,6 +12,9 @@ export const startApp = async () => {
         const response = await axios.get(`https://api-football-v1.p.rapidapi.com/v3/leagues`, {
             headers: {
                 'X-RapidAPI-Key': 'eccc5e78e9msh2b281a57631d872p1469a5jsn044fd343be0f',
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, PUT, PATCH, POST, DELETE",
+                "Access-Control-Allow-Headers": "Content-Type,Authorization",
             }
         });
 
@@ -38,6 +41,9 @@ export const showLeague = async (id) => {
         const response = await axios.get(`https://api-football-v1.p.rapidapi.com/v3/standings?season=${year}&league=${id}`, {
             headers: {
                 'X-RapidAPI-Key': 'eccc5e78e9msh2b281a57631d872p1469a5jsn044fd343be0f',
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, PUT, PATCH, POST, DELETE",
+                "Access-Control-Allow-Headers": "Content-Type,Authorization",
             }
         });
         let result = response.data.response[0].league;
@@ -60,6 +66,9 @@ export const showCalendar = async (type, id) => {
         const response = await axios.get(`https://api-football-v1.p.rapidapi.com/v3/fixtures?season=${year}&${type}=${id}${!date[0] || !date[1] ? '' : `&from=${date[0]}&to=${date[1]}`}`, {
             headers: {
                 'X-RapidAPI-Key': 'eccc5e78e9msh2b281a57631d872p1469a5jsn044fd343be0f',
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, PUT, PATCH, POST, DELETE",
+                "Access-Control-Allow-Headers": "Content-Type,Authorization",
             }
         });
         let dateRange = selectDate(response.data.response)
