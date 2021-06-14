@@ -7,56 +7,55 @@ import Preloader from "../../utils/Preloader/Preloader";
 import './style.css';
 
 const status = {
-    'Match Finished':'Матч Завершен',
-    'No Started':"Не начался"
+    'Match Finished': 'Матч Завершен',
+    'No Started': "Не начался"
 }
 
 const Calendar = (props) => {
 
     const dispatch = useDispatch();
-    let listMatches = useSelector(state=>state.app.matches)
+    let listMatches = useSelector(state => state.app.matches)
     let league = loadFromLocalStorage('league');
     let team = loadFromLocalStorage('team');
 
     let id = props.match.params.id;
     let type = props.match.params.type;
 
-    useEffect(()=>{
-            dispatch(()=>showCalendar(type,id));
-    },[dispatch, id, type])
+    useEffect(() => {
+        dispatch(() => showCalendar(type, id));
+    }, [dispatch, id, type])
 
     let breadCrumbs = [];
 
-    if (type==='league'){
+    if (type === 'league') {
         breadCrumbs = [
             {
-                title:'Список Лиг',
-                path:'/',
-                className:''
+                title: 'Список Лиг',
+                path: '/',
+                className: ''
             },
             {
-                title:league.name,
-                path:``,
-                className:'active'
+                title: league.name,
+                path: ``,
+                className: 'active'
             },
         ];
-    }
-    else if (type==='team') {
+    } else if (type === 'team') {
         breadCrumbs = [
             {
-                title:'Список Лиг',
-                path:'/',
-                className:''
+                title: 'Список Лиг',
+                path: '/',
+                className: ''
             },
             {
-                title:league.name,
-                path:`/league/${league.id}`,
-                className:''
+                title: league.name,
+                path: `/league/${league.id}`,
+                className: ''
             },
             {
-                title:team.name,
-                path:``,
-                className:'active'
+                title: team.name,
+                path: ``,
+                className: 'active'
             }
         ];
     }
@@ -65,12 +64,12 @@ const Calendar = (props) => {
     return (
         <div>
             {
-                listMatches.length === 0? <Preloader/>
+                listMatches.length === 0 ? <Preloader/>
                     :
                     <div>
-                        <Breadcrumbs items={breadCrumbs} />
+                        <Breadcrumbs items={breadCrumbs}/>
                         {
-                            type==='league'?
+                            type === 'league' ?
                                 <div className={'d-flex justify-content-center mb-5'}>
                                     <img className={'logoTeam'} src={league.logo} alt=""/>
                                     <h1 className={'titleTeam align-self-center'}>{league.name}</h1>
@@ -85,7 +84,7 @@ const Calendar = (props) => {
                         <div className={"CalendarMatches"}>
 
                             {
-                                listMatches.map((item,index)=>(
+                                listMatches.map((item) => (
                                     <div
                                         key={item.fixture.id}
                                         className={"container match"}
@@ -94,7 +93,7 @@ const Calendar = (props) => {
                                             <div className={"text-center"}>
                                                 {item.teams.home.name}
                                             </div>
-                                            <div  style={{textAlign:"center"}}>
+                                            <div style={{textAlign: "center"}}>
                                                 {item.league.name} - {item.league.season}
                                             </div>
                                             <div className={"text-center"}>
@@ -112,23 +111,23 @@ const Calendar = (props) => {
                                                         {item.goals.home} &#8212; {item.goals.away}
                                                     </div>
                                                 </div>
-                                                {item.score.extratime.home!==null ?
+                                                {item.score.extratime.home !== null ?
                                                     <div>
                                                         <span>Дополнительные время:</span>
                                                         <div className={'score_main'}>
                                                             {item.score.extratime.home} &#8212; {item.score.extratime.away}
                                                         </div>
-                                                    </div> :''
+                                                    </div> : ''
 
                                                 }
 
-                                                {item.score.penalty.home!==null ?
+                                                {item.score.penalty.home !== null ?
                                                     <div>
                                                         <span className={'col sm-1'}>Пенальти:</span>
                                                         <div className={'score_main'}>
                                                             {item.score.penalty.home} &#8212; {item.score.penalty.away}
                                                         </div>
-                                                    </div> :''
+                                                    </div> : ''
 
                                                 }
                                             </div>
@@ -138,8 +137,8 @@ const Calendar = (props) => {
                                         </div>
 
                                         <div className={'info'}>
-                                            <div className={'col sm-6'} >{
-                                                new Date(item.fixture.date).toLocaleDateString().replace(/\//g,'-')+' '+
+                                            <div className={'col sm-6'}>{
+                                                new Date(item.fixture.date).toLocaleDateString().replace(/\//g, '-') + ' ' +
                                                 new Date(item.fixture.date).toLocaleTimeString()
                                             }</div>
                                             <div className={'col sm-6'}>{status[item.fixture.status.long]}</div>

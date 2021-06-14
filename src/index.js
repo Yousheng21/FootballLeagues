@@ -1,6 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
-// import Popper from 'popper.js';
-import 'jquery/src/jquery'
 import 'bootstrap/dist/js/bootstrap.bundle';
 import './index.css';
 
@@ -12,7 +10,7 @@ import {Provider} from "react-redux";
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <App/>
     </Provider>,
     document.getElementById('root')
 );

@@ -9,9 +9,9 @@ const Breadcrumbs = (props) => {
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     {
-                        props.items.map((item,index)=>{
+                        props.items.map((item, index) => {
                             return <li key={index} className={`breadcrumb-item ${item.className}`}>
-                                {item.className === 'active'?
+                                {item.className === 'active' ?
                                     item.title :
                                     <a href={`${item.path}?season=${year}`}>{item.title}</a>
                                 }

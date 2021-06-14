@@ -1,15 +1,15 @@
-.listTeams{
+.listTeams {
     display: grid;
     grid-template: 1fr/1fr 1.5fr 0.5fr;
     grid-column-gap: 10px;
 }
 
-.listTeams div{
+.listTeams div {
     justify-self: center;
     align-self: center;
 }
 
-.wrap{
+.wrap {
     display: grid;
     grid-template: 1fr/1fr 1fr;
     justify-content: center;
@@ -17,57 +17,62 @@
     margin-right: 3%;
 }
 
-.imgTeam{
+.imgTeam {
     width: 120px;
     height: 120px;
 }
 
-form{
+form {
     margin: 5%;
 }
 
-.titleTeam{
+.titleTeam {
     margin: 5%;
 }
 
-.logoTeam{
+.logoTeam {
     width: 150px;
     height: 180px;
 }
 
-@media screen and (max-width: 900px){
-    .wrap{
+@media screen and (max-width: 900px) {
+    .wrap {
         grid-template: 1fr/1fr;
     }
 }
 
 @media screen and (max-width: 450px) {
-    .imgTeam{
+    .imgTeam {
         width: 80px;
         height: 80px;
     }
-    .logoTeam{
+
+    .logoTeam {
         width: 120px;
         height: 150px;
     }
-    .bodyTeam{
-        margin-left:4%;
+
+    .bodyTeam {
+        margin-left: 4%;
     }
-    form .search{
+
+    form .search {
         margin: 2%;
         flex-direction: column;
     }
-    form .search input{
+
+    form .search input {
         margin: 1%;
     }
-    form{
+
+    form {
         flex-direction: column;
         margin: 1%;
     }
 }
 
-@media screen and (max-width: 350px){
-    .titleTeam{
+@media screen and (max-width: 350px) {
+    .titleTeam {
         font-size: 20px;
     }
 }

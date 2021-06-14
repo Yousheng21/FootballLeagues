@@ -1,109 +1,109 @@
 
-.CalendarMatches{
+.CalendarMatches {
     display: grid;
     grid-template-columns: 45% 45%;
     justify-content: center;
     overflow: hidden;
-    /*margin-right: 3%;*/
     grid-column-gap: 2%;
     grid-row-gap: 20px;
 }
 
-.match{
+.match {
     display: grid;
-    grid-template: 1fr/repeat(3,1fr);
+    grid-template: 1fr/repeat(3, 1fr);
     grid-template-columns: 100%;
     grid-gap: 5%;
     padding: 3%;
     justify-content: center;
     background-color: antiquewhite;
 }
-.allMatches{
+
+.allMatches {
     width: 50%;
     margin: 3%;
     align-self: center;
 }
 
-.send{
+.send {
     width: 50%;
     align-self: center;
 }
 
-.match>div{
+.match > div {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr;
 
 }
-.score_main{
+
+.score_main {
     justify-self: center;
 }
 
-.match div div{
+.match div div {
     justify-self: center;
 }
-.score{
+
+.score {
     display: grid;
     grid-template-columns: 1fr !important;
 }
 
-.score div{
+.score div {
     display: grid;
     justify-self: center;
 }
 
-.emblem{
-    width:96px;
-    height:96px;
+.emblem {
+    width: 96px;
+    height: 96px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
-.info{
+.info {
     grid-template-columns: 1fr 1fr !important;
     margin: 5%;
 }
 
-.datePick{
+.datePick {
     display: flex;
     margin: 3% 0;
 }
 
-.datePick div label{
+.datePick div label {
     padding: 2px;
 }
 
-.logoCalendar{
+.logoCalendar {
     width: 150px;
     height: 150px;
 }
 
 
-
-
-
-@media screen and (max-width: 700px){
-    .CalendarMatches{
+@media screen and (max-width: 700px) {
+    .CalendarMatches {
         grid-template-columns: 90%;
     }
 }
 
-@media screen and (max-width: 500px){
-    .emblem{
-        width:56px;
-        height:56px;
+@media screen and (max-width: 500px) {
+    .emblem {
+        width: 56px;
+        height: 56px;
     }
 }
 
 
-@media screen and (max-width: 340px){
-    .datePick{
+@media screen and (max-width: 340px) {
+    .datePick {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .datePick div{
+
+    .datePick div {
         display: flex;
         justify-content: center;
     }

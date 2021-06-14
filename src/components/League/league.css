@@ -1,65 +1,67 @@
-tbody tr{
+tbody tr {
     display: grid;
-    grid-template: 1fr/repeat(3,1.5fr) repeat(7,1fr);
+    grid-template: 1fr/repeat(3, 1.5fr) repeat(7, 1fr);
     grid-column-gap: 10px;
     border-bottom: solid 2px black;
 }
 
-.standings{
+.standings {
     display: grid;
     justify-content: center;
     grid-gap: 5%;
 }
 
-.titleLeague{
-    margin:5%;
+.titleLeague {
+    margin: 5%;
 }
 
-tbody{
+tbody {
     display: grid;
     grid-gap: 3%;
 }
 
-tbody tr td{
+tbody tr td {
     justify-self: center;
     align-self: center;
 }
 
-.img_league{
+.img_league {
     width: 120px;
     height: 120px;
 }
 
-@media screen and (max-width: 700px){
-    .img_league{
+@media screen and (max-width: 700px) {
+    .img_league {
         width: 100px;
         height: 100px;
     }
 }
 
-@media screen and (max-width: 500px){
-    .img_league{
-        width:80px;
+@media screen and (max-width: 500px) {
+    .img_league {
+        width: 80px;
         height: 80px;
     }
-    .logoLeague{
+
+    .logoLeague {
         width: 100px;
         height: 120px;
     }
 }
 
-@media screen and (max-width: 460px){
-    .img_league{
+@media screen and (max-width: 460px) {
+    .img_league {
         display: none;
     }
-    tbody tr{
+
+    tbody tr {
         font-size: 12px;
-        grid-template: 1fr/0.5fr 0fr 1.5fr repeat(7,1fr);
+        grid-template: 1fr/0.5fr 0fr 1.5fr repeat(7, 1fr);
     }
 }
 
-@media screen and (max-width: 370px){
-    .titleLeague{
+@media screen and (max-width: 370px) {
+    .titleLeague {
         font-size: 20px;
     }
 }
