@@ -1,7 +1,8 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import {formattedDate, get} from "../../actions/app";
 import {useSelector} from "react-redux";
 import './datePick.css'
+
 const DatePick = () => {
     let from = get('from');
     let to = get('to');
@@ -16,8 +17,8 @@ const DatePick = () => {
         to = formattedDate(toState);
     }
 
-    const [inputFrom,setInputFrom] = useState(from)
-    const [inputTo,setInputTo] = useState(to)
+    const [inputFrom, setInputFrom] = useState(from)
+    const [inputTo, setInputTo] = useState(to)
 
 
     return (
@@ -27,7 +28,7 @@ const DatePick = () => {
                 <input type="date"
                        id='from'
                        min={from}
-                       value={inputFrom??from}
+                       value={inputFrom ?? from}
                        name={'from'}
                        onChange={(event => {
                            setInputFrom(event.target.value)
@@ -42,16 +43,13 @@ const DatePick = () => {
                        id='to'
                        max={to}
                        name={'to'}
-                       value={inputTo??to}
+                       value={inputTo ?? to}
                        onChange={(event => {
                            setInputTo(event.target.value)
                        })}
                        onMouseDown={event => event.preventDefault()}
                 />
             </div>
-            {/*<input type="text" value={inputFrom??from} onClick={datepick('from')} id="from" name="from" readOnly={true} />*/}
-            {/*<input type="text" value={inputTo??to} onClick={datepick('to')} id="to" name="to" readOnly={true} />*/}
-
         </div>
     );
 };
