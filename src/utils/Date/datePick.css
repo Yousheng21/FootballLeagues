@@ -1,0 +1,11 @@
+
+.rangeDate{
+    width: 125%;
+}
+
+#from::-webkit-calendar-picker-indicator,#to::-webkit-calendar-picker-indicator {
+    color: transparent;
+    opacity: 1;
+    background: url(https://img.icons8.com/color/24/000000/date-to.png) no-repeat center;
+    background-size: contain;
+}
