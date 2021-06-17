@@ -34,10 +34,17 @@ const ListLeagues = () => {
                                         {item.country.name}
                                     </div>
                                     <div>
-                                        <a href={`/teams/${item.league.id}?season=${year}`}>{item.league.name}</a>
+                                        <a href={`/teams/${item.league.id}?season=${year}`}
+                                           onClick={()=>
+                                               saveLocal('league', item.league)
+                                           }
+                                        >{item.league.name}</a>
                                     </div>
                                     <div className={'d-flex'}>
                                         <a href={`/league/${item.league.id}?season=${year}`}
+                                           onClick={()=>
+                                               saveLocal('league', item.league)
+                                           }
                                            className={'btn btn-outline-primary'}>таблица</a>
                                     </div>
                                     <div className={'calendar'}>
